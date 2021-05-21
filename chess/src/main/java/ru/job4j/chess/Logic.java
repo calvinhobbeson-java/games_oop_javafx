@@ -21,7 +21,15 @@ public final class Logic {
     }
 
     private boolean free(Cell[] steps) throws OccupiedCellException {
-        return true;
+        boolean result = false;
+        for (int index = 0; index < steps.length; index++) {
+            if (steps[index] != null) {
+                throw new OccupiedCellException();
+            } else {
+               result =  true;
+            }
+        }
+        return result;
     }
 
     public void clean() {

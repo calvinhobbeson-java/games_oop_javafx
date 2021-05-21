@@ -27,4 +27,10 @@ public class BishopBlackTest {
         Cell[] expected = bishop.way(Cell.G5);
         assertThat (expected, is(new Cell[] { Cell.D2, Cell.E3, Cell.F4, Cell.G5}));
     }
+
+    @Test
+    public void ifNotDiagonalThenException() {
+        BishopBlack bishop = new BishopBlack(Cell.G5);
+        assertThat(bishop.isDiagonal(Cell.C1,Cell.G6), is( false));
+    }
 }
